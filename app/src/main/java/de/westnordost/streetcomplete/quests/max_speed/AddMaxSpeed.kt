@@ -6,6 +6,7 @@ import de.westnordost.streetcomplete.data.osm.mapdata.Element
 import de.westnordost.streetcomplete.data.osm.mapdata.MapDataWithGeometry
 import de.westnordost.streetcomplete.data.osm.mapdata.filter
 import de.westnordost.streetcomplete.data.osm.osmquests.OsmFilterQuestType
+import de.westnordost.streetcomplete.data.quest.AllCountries
 import de.westnordost.streetcomplete.data.quest.AllCountriesExcept
 import de.westnordost.streetcomplete.data.user.achievements.EditTypeAchievement.CAR
 import de.westnordost.streetcomplete.osm.MAXSPEED_TYPE_KEYS
@@ -32,7 +33,7 @@ class AddMaxSpeed : OsmFilterQuestType<Pair<MaxSpeedAnswer, Pair<String, String>
     override val icon = R.drawable.ic_quest_max_speed
     override val hasMarkersAtEnds = true
     // see #813: US has different rules for each different state which need to be respected
-    override val enabledInCountries = AllCountriesExcept("US")
+    override val enabledInCountries = AllCountries
     override val achievements = listOf(CAR)
     override val defaultDisabledMessage = R.string.default_disabled_msg_maxspeed
 
